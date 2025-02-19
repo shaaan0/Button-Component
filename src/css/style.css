@@ -1,7 +1,6 @@
 /* Put any custom CSS styles here.  */
 /* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
 body {
-  margin: auto;
   font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
@@ -11,6 +10,7 @@ body {
 * {
   box-sizing: border-box;
 }
+
 .credits {
   color: #777;
   position: fixed;
@@ -25,18 +25,238 @@ body {
   font-weight: bold;
 }
 
+ /* .container{
+
+  height: 100px;
+}  */
+
 .button {
   display: inline-flex;
   column-gap: 8px;
+  justify-content: stretch;
+  align-items: center;
   border-radius: 5px;
+
 }
+
 .button-primary{
   border: 1px solid #4338CA;
+  background-color:#4338CA ;
+  color: #FFFFFF;
+  box-shadow: 1px 1px 2px 2px #E5E5E5;
 
 }
+.button-primary:hover{
+  background-color:#3730A3 ;  
+  box-shadow:none;
+}
+.button-primary:focus{
+  background-color:#3730A3 ;
+  border: 3px solid lightgray;
+  box-shadow:none;
 
-@media only screen and (min-width: 1200px) {
-  body{
-    width: 1280px;
+}
+.button-primary-disabled{
+  background-color: #F5F5F5;
+  border: none;
+  color: #A3A3A3;
+  box-shadow:none;
+}
+.button-primary-disabled:hover{
+  background-color: #F5F5F5;
+}
+.button-primary-disabled:focus{
+  background-color: #F5F5F5;
+  border: none;
+}
+
+.button-secondary{
+  border: 1px solid #FFFFFF;
+  background-color:#FFFFFF ;
+  box-shadow: 1px 1px 2px 2px #E5E5E5;
+  color: #171717;
+}
+.button-secondary:hover{
+  background-color:#FAFAFA ;  
+}
+.button-secondary:focus{
+  background-color:#FAFAFA ;
+  border: 3px solid lightgray;
+  box-shadow: none;
+
+}
+.button-secondary-disabled{
+  background-color: #F5F5F5;
+  border: none;
+  color: #A3A3A3;
+  box-shadow:none;
+
+}
+.button-secondary-disabled:hover{
+  background-color: #F5F5F5;
+}
+.button-secondary-disabled:focus{
+  background-color: #F5F5F5;
+  border: none;
+}
+.button-tertiary{
+  border: 1px solid #FFFFFF;
+  background-color:#FFFFFF ;
+  color: #4338CA;
+}
+.button-tertiary:hover{
+  background-color:#FAFAFA ;  
+}
+.button-tertiary:focus{
+  background-color:#FAFAFA ;
+  border: 3px solid lightgray;
+  box-shadow: none;
+
+}
+.button-tertiary-disabled{
+  background-color:#FFFFFF ;
+  border: none;
+  color: #A3A3A3;
+  box-shadow:none;
+
+}
+.button-tertiary-disabled:focus{
+  background-color:#FFFFFF ;
+
+  border: none;
+}
+
+.button-destructive{
+  border: 1px solid #DC2626;
+  background-color:#DC2626 ;
+  color: #FFFFFF;
+}
+.button-destructive:hover{
+  background-color:#B91C1C ;  
+}
+.button-destructive:focus{
+  background-color:#B91C1C ;
+  border: 3px solid lightgray;
+  box-shadow: none;
+
+}
+.button-destructive-disabled{
+  background-color:#FFFFFF ;
+  border: none;
+  color: #A3A3A3;
+  box-shadow:none;
+
+}
+.button-destructive-disabled:focus{
+  background-color:#FFFFFF ;
+  color: #A3A3A3;
+
+  border: none;
+}
+.button-destructive-disabled:hover{
+  background-color:#FFFFFF ;
+  color: #A3A3A3;
+
+  border: none;
+}
+
+.button-link{
+  border: 1px solid #FFFFFF;
+  background-color:#FFFFFF ;
+  color: #4338CA;
+}
+.button-link:focus{
+  border: 3px solid lightgray;
+  box-shadow: none;
+}
+.button-link-disabled{
+  background-color:#FFFFFF ;
+  border: none;
+  color: #A3A3A3;
+  box-shadow:none;
+
+}
+.button-link-disabled:focus{
+  background-color:#FFFFFF ;
+  color: #A3A3A3;
+
+  border: none;
+}
+.button-link-disabled:hover{
+  background-color:#FFFFFF ;
+  color: #A3A3A3;
+
+  border: none;
+}
+.label{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap:8px;
+  color: #4338CA;
+}
+
+.label:hover{
+  color: #3730A3;
+}
+.label-focus{
+  border: 3px solid gray;
+  color: #3730A3;
+  border-radius: 4px;
+}
+.gray{
+  color: #525252;
+}
+.gray:hover{
+  color: #171717;
+}
+.label-disabled{
+  background-color:#FFFFFF ;
+  border: none;
+  color: #A3A3A3;
+}
+.label-disabled:hover{
+  background-color:#FFFFFF ;
+  color: #A3A3A3;
+
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px 10px;
+}
+
+.button-m{
+  padding: 10px 12px;
+}
+.button-l{
+  padding: 10px 14px;
+
+}
+.button-xl{
+  padding: 12px 16px;
+}
+.button-xxl{
+  padding: 16px 20px;
+}
+
+.main{
+  margin:auto auto ;
+  max-width: fit-content;
+  max-height:max-content;
+  display: flex;
+  flex-direction:column ;
+  gap: 50px;
+}
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 12px;
   }
 }
